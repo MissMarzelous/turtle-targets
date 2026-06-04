@@ -35,20 +35,21 @@ All circles are centered along the y-axis, creating a target-like appearance.
 ```python
 import turtle
 
-# Set up turtle
-turtle.bgcolor("pink")
-turtle.speed(10)
-turtle.pencolor("purple")
-turtle.width(5)
+def draw_circle(pen, x, y, radius, fill_color):
+    pen.fillcolor(fill_color)
+    pen.begin_fill()
+    pen.penup()
+    pen.goto(x, y)
+    pen.pendown()
+    pen.circle(radius)
+    pen.end_fill()
 
 # Draw three nested circles
-turtle.fillcolor("white")
-turtle.begin_fill()
-turtle.goto(0, -36)
-turtle.circle(100)
-turtle.end_fill()
+draw_circle(pen, 0, -36, 100, "white")
+draw_circle(pen, 0, -18, 50,  "turquoise")
+draw_circle(pen, 0, -9,  25,  "white")
 
-# ... repeat for circles 2 and 3
+turtle.done()
 ```
 
 ## Key Concepts
@@ -67,11 +68,17 @@ turtle.end_fill()
    python Fabrick_Marlena_A2_Targets.py
    ```
 3. A window will appear showing the target design
-4. Close the window to exit
+4. The window stays open until you close it manually
 
 ## Output
 
 A pink background with a purple-outlined target design featuring three nested circles in white, turquoise, and white.
+
+## 📸 Screenshots
+
+### Finished Design
+
+![Finished Design](turtle-target-finished.png)
 
 ## Skills Demonstrated
 
